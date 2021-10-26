@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""글 작성자"""
+type Author {
+  """이름"""
+  firstName: String
+
+  """글 작성자 아이디"""
+  id: Int!
+
+  """성"""
+  lastName: String
+
+  """게시글 목록"""
+  posts: [Post!]!
+}
+
+"""Author 가 게시한 글"""
+type Post {
+  """게시자 아이디"""
+  createdBy: Int!
+
+  """게시물 아이디"""
+  id: Int!
+
+  """글 제목"""
+  title: String!
+
+  """좋아요"""
+  votes: Int
+}
+
+type Query {
+  author(id: Int!): Author!
+  authors: [Author!]!
+}
